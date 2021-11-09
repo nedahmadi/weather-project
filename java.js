@@ -40,9 +40,6 @@ function searchCity(event) {
 let form = document.querySelector("form");
 form.addEventListener("submit", searchCity);
 
-let currentYourlocation = document.querySelector("#currentYourlocation");
-currentYourlocation.addEventListener("click", getCurrentLocation);
-
 function convertTOf(event) {
   event.preventDefault();
   let h2 = document.querySelector("h2");
