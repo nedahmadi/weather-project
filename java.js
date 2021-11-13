@@ -25,6 +25,9 @@ function displayWeatherCondition(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#himidi").innerHTML = Math.round(
+    response.data.main.humidity
+  );
 }
 
 function searchCity(event) {
