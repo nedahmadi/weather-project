@@ -17,7 +17,6 @@ let day = days[now.getDay()];
 h7.innerHTML = `${day} ${hours}:${minutes}`;
 
 function displayWeatherCondition(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -28,6 +27,14 @@ function displayWeatherCondition(response) {
   document.querySelector("#himidi").innerHTML = Math.round(
     response.data.main.humidity
   );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 }
 
 function searchCity(event) {

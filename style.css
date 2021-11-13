@@ -46,17 +46,19 @@ img {
   position: relative;
   left: 125px;
 }
-p {
+.ppp {
   text-align: center;
   color: blue;
-  padding-bottom: 200px;
+  position: relative;
+  bottom: 40px;
+  left: 111px;
 }
 
 .saat {
   text-align: center;
   position: relative;
-  bottom: 210px;
-  left: 95px;
+  bottom: 3px;
+  left: 15px;
   color: blue;
 }
 .center {
