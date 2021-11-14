@@ -18,6 +18,8 @@ h7.innerHTML = `${day} ${hours}:${minutes}`;
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
+  celsiusTemperature = response.data.main.temp;
+
   document.querySelector("#temperature").innerHTML =
     Math.round(celsiusTemperature);
   document.querySelector("#wind").innerHTML = Math.round(
@@ -34,7 +36,6 @@ function displayWeatherCondition(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-  celsiusTemperature = response.data.main.temp;
 }
 
 function searchCity(event) {
