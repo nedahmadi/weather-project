@@ -1,5 +1,5 @@
 .search {
-  padding-top: 50px;
+  padding-top: 60px;
   display: block;
   text-align: center;
 }
@@ -17,6 +17,10 @@
 
   color: blue;
   padding-top: 50px;
+}
+.btn-primary {
+  position: relative;
+  top: -2px;
 }
 .degree {
   padding-top: 10px;
