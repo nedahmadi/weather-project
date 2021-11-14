@@ -56,6 +56,7 @@ img {
   position: relative;
   bottom: 40px;
   left: 111px;
+  float: inline-end;
 }
 
 .saat {
@@ -64,6 +65,7 @@ img {
   bottom: 3px;
   left: 15px;
   color: blue;
+  float: inline-end;
 }
 .center {
   box-sizing: border-box;
