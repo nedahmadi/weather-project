@@ -71,4 +71,3 @@ fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsiuslink");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-searchCity("Toronto");
