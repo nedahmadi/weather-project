@@ -83,28 +83,31 @@ img {
 }
 .container {
   color: blue;
-  position: relative;
-  left: 133px;
+  text-align: center;
+  margin-left: 185px;
 }
 
-.container2 {
-  color: blue;
-  position: relative;
-  left: 142px;
-}
-.container3 {
-  color: blue;
-  position: relative;
-  left: 142px;
-}
 .wholecontainer {
-  margin-left: -130px;
+  margin-left: -133px;
+}
+.weather-forecast-date {
+  text-align: center;
+  margin-left: -380px;
+  margin-top: 50px;
+}
+.weather-sun {
+  text-align: center;
+  margin-left: -137px;
+}
+.weather-forecast-temperature {
+  text-align: center;
+  margin-left: -370px;
 }
 
 .wolepage {
   border: 1px solid blue;
   border-radius: 10px;
-  width: 75%;
+  width: 78%;
   padding-top: 0px;
 
   background-image: linear-gradient(to top, #ede7cf 20%, #79c2d0 100%);

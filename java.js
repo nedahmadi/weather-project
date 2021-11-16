@@ -1,20 +1,61 @@
 let now = new Date();
-let h7 = document.querySelector("h7");
-let hours = now.getHours();
-let minutes = now.getMinutes();
+{
+  let h7 = document.querySelector("h7");
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednsday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednsday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
 
-h7.innerHTML = `${day} ${hours}:${minutes}`;
+  h7.innerHTML = `${day} ${hours}:${minutes}`;
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      
+           <div class="col-2">
+             <div class="weather-forecast-date">${day}</div>
+             <img
+             class="weather-sun"
+             src="https://cdn.icon-icons.com/icons2/1370/PNG/512/if-weather-3-2682848_90785.png"
+             alt=""
+             width="40"
+             />
+             <div class="weather-forecast-temperature">
+               <span class="weather-forecast-temperature-max">
+                 18°</span>
+                 <span class="weather-forecast-temperature-min">
+                   12°
+                 </span>
+             </div>
+           </div>
+       
+       
+
+         
+       
+   `;
+  });
+
+  forecast = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -72,3 +113,5 @@ fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsiuslink");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+displayForecast();
