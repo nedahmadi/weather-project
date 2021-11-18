@@ -1,7 +1,5 @@
 let now = new Date();
-
 let h7 = document.querySelector("h7");
-
 let date = now.getDate();
 
 let hours = now.getHours();
@@ -18,7 +16,7 @@ let days = [
 ];
 let day = days[now.getDay()];
 
-h7.innerHTML = `${day},${hours}:${minutes}`;
+h7.innerHTML = `${day}  ${hours}  :${minutes}`;
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -101,14 +99,17 @@ function displayWeatherCondition(response) {
   getForecast(response.data.coord);
 }
 
-function searchCity(event) {
-  event.preventDefault();
-
+function search(city) {
   let apiKey = "d2ced9a51dfc32ccb0ae22ecfcd93888";
-  let city = document.querySelector("#search").value;
 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(displayWeatherCondition);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchElemet = document.querySelector("#search");
+  search(searchElemet.value);
 }
 
 function displayFahrenheitTemperature(event) {
@@ -119,6 +120,10 @@ function displayFahrenheitTemperature(event) {
 
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
+search("Toronto");
+
+let form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
@@ -126,9 +131,6 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 let celsiusTemperature = null;
-
-let form = document.querySelector("form");
-form.addEventListener("submit", searchCity);
 
 let fahrenheitlink = document.querySelector("#fahrenheitlink");
 fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);

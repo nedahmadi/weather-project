@@ -53,19 +53,17 @@ img {
 .ppp {
   text-align: center;
   color: blue;
-  position: relative;
-  bottom: 40px;
-  left: 111px;
-  float: inline-end;
+  display: flex;
+  justify-content: center;
 }
 
 .saat {
   text-align: center;
-  position: relative;
-  bottom: 3px;
-  left: 15px;
+  display: flex;
+  justify-content: center;
+
   color: blue;
-  float: inline-end;
+  margin: 0 auto;
 }
 .center {
   box-sizing: border-box;
